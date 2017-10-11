@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  onlinestorewebapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Container
+    ports:
+      - "80"
+
+  onlinestorewebapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Container
+    ports:
+      - "80"

@@ -1,0 +1,48 @@
+﻿@model OnlineStoreWebApp.Models.AdminViewModel
+
+
+<h1>Registered customers</h1>
+<span>Below is the list of registered customers for the feature product notification</span>
+
+<br/><br/>
+<p>
+<table border="1">
+    <tr>
+        <th width="25%">
+            First Name
+        </th>
+        <th width="25%">
+            Last Name
+        </th>
+        <th width="40%">
+            Email Address
+        </th>
+        <th>
+            Notify Me
+        </th>
+    </tr>
+   @foreach (var item in Model.RegisteredCustomers) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+			@if(item.NotifyMe) 
+			{
+               <span>Yes</span>
+			}
+			else
+			{
+			  <span>No</span>
+			}
+        </td>
+    </tr>
+  }
+</table>
+</p>

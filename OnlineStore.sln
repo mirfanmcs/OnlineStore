@@ -1,0 +1,40 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStoreWebApp", "OnlineStoreWebApp\OnlineStoreWebApp.csproj", "{8CCF0045-A4D5-4094-BC2D-AD4461F20053}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{34F1292F-DF0B-4F6C-A43F-D3AC1E7D3E4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStoreWebApi", "OnlineStoreWebApi\OnlineStoreWebApi.csproj", "{7A29EC2A-C487-4515-89E1-6A06EF6A59D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E5D0D8AF-B9BA-4002-94C7-B89001D07EA7}"
+	ProjectSection(SolutionItems) = preProject
+		initscript.sql = initscript.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStoreWorker", "OnlineStoreWorker\OnlineStoreWorker.csproj", "{DC813916-2ADA-400B-892F-8874CDB4D942}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CCF0045-A4D5-4094-BC2D-AD4461F20053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CCF0045-A4D5-4094-BC2D-AD4461F20053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CCF0045-A4D5-4094-BC2D-AD4461F20053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CCF0045-A4D5-4094-BC2D-AD4461F20053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F1292F-DF0B-4F6C-A43F-D3AC1E7D3E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F1292F-DF0B-4F6C-A43F-D3AC1E7D3E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F1292F-DF0B-4F6C-A43F-D3AC1E7D3E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F1292F-DF0B-4F6C-A43F-D3AC1E7D3E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A29EC2A-C487-4515-89E1-6A06EF6A59D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A29EC2A-C487-4515-89E1-6A06EF6A59D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A29EC2A-C487-4515-89E1-6A06EF6A59D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A29EC2A-C487-4515-89E1-6A06EF6A59D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC813916-2ADA-400B-892F-8874CDB4D942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC813916-2ADA-400B-892F-8874CDB4D942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC813916-2ADA-400B-892F-8874CDB4D942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC813916-2ADA-400B-892F-8874CDB4D942}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
