@@ -28,8 +28,18 @@
   <ItemGroup>
     <None Remove="appsettings.json" />
     <None Remove="OnlineStoreWorker.userprefs" />
+    <None Remove="appsettings.Container.json" />
+    <None Remove="appsettings.Development.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Services\CustomerService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.Container.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
