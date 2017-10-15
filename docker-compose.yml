@@ -15,6 +15,11 @@ services:
   onlinestorewebapi:
     image: onlinestorewebapi
     container_name: OnlineStoreWebApi
+    environment:
+      - ONLINE_STORE_DB_USERNAME=root
+      - ONLINE_STORE_DB_PASSWORD=password
+      - ONLINE_STORE_MQ_USERNAME=store
+      - ONLINE_STORE_MQ_PASSWORD=password
     ports:
           - 3001:80
     build:
@@ -29,6 +34,10 @@ services:
     container_name: OnlineStoreWorker
     environment:
       - ASPNETCORE_ENVIRONMENT=Container
+      - ONLINE_STORE_DB_USERNAME=root
+      - ONLINE_STORE_DB_PASSWORD=password
+      - ONLINE_STORE_MQ_USERNAME=store
+      - ONLINE_STORE_MQ_PASSWORD=password
     build:
       context: ./OnlineStoreWorker
       dockerfile: Dockerfile

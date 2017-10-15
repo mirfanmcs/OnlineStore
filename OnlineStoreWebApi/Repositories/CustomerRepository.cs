@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Dapper;
 using Microsoft.Extensions.Options;
 using MySql.Data.MySqlClient;
@@ -17,7 +18,12 @@ namespace OnlineStoreWebApi.Repositories
 
         public IList<Customer> GetAll()
         {
-            MySqlConnection connection = new MySqlConnection(_onlineStoreDbSettings.Value.ConnectionString);
+            var onlineStoreDbUserName = Environment.GetEnvironmentVariable("ONLINE_STORE_DB_USERNAME");
+            var onlineStoreDbPassword = Environment.GetEnvironmentVariable("ONLINE_STORE_DB_PASSWORD");
+
+            var connectionString = $"Server={_onlineStoreDbSettings.Value.Server};Database={_onlineStoreDbSettings.Value.Database};Uid={onlineStoreDbUserName};Pwd={onlineStoreDbPassword};";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
 
             var registeredCustomers = connection.Query<Customer>("Select * from Customers");
             return registeredCustomers.AsList();

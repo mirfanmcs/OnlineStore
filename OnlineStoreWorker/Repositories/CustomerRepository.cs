@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using System;
+using Dapper;
 using Microsoft.Extensions.Options;
 using MySql.Data.MySqlClient;
 using OnlineStoreWorker.Models;
@@ -16,7 +17,12 @@ namespace OnlineStoreWorker.Repositories
 
         public void Insert(Customer customer)
         {
-            MySqlConnection connection = new MySqlConnection(_onlineStoreDbSettings.Value.ConnectionString);
+            var onlineStoreDbUserName = Environment.GetEnvironmentVariable("ONLINE_STORE_DB_USERNAME");
+            var onlineStoreDbPassword = Environment.GetEnvironmentVariable("ONLINE_STORE_DB_PASSWORD");
+
+            var connectionString = $"Server={_onlineStoreDbSettings.Value.Server};Database={_onlineStoreDbSettings.Value.Database};Uid={onlineStoreDbUserName};Pwd={onlineStoreDbPassword};";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
 
 
             var count = connection.Execute(@"insert into Customers (FirstName, LastName,EmailAddress,NotifyMe) values (@FirstName, @LastName,@EmailAddress,@NotifyMe)",

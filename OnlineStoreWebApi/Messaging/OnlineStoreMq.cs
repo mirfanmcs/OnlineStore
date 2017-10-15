@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using OnlineStoreWebApi.Models;
@@ -17,8 +18,11 @@ namespace OnlineStoreWebApi.Messaging
 
         public void SendMessage(Customer customer)
         {
+            var onlineStoreMqUserName = Environment.GetEnvironmentVariable("ONLINE_STORE_MQ_USERNAME");
+            var onlineStoreMqPassword = Environment.GetEnvironmentVariable("ONLINE_STORE_MQ_PASSWORD");
+
             var factory = new ConnectionFactory() 
-                          { HostName = _onlineStoreMqSettings.Value.HostName, UserName = _onlineStoreMqSettings.Value.UserName, Password = _onlineStoreMqSettings.Value.Password };
+            { HostName = _onlineStoreMqSettings.Value.HostName, UserName = onlineStoreMqUserName, Password = onlineStoreMqPassword };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
