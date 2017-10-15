@@ -1,3 +1,6 @@
+CREATE USER 'store'@'%' IDENTIFIED BY 'password';
+grant all on *.* to 'store'@'%';
+
 CREATE DATABASE IF NOT EXISTS OnlineStore;
 
 USE OnlineStore;
