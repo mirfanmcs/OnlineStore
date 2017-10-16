@@ -66,7 +66,7 @@ services:
         - 3306:3306
     volumes:
         - ~/mysql:/var/lib/mysql
-        - .:/tmp
-    command: --init-file /tmp/initscript.sql
+        - .:/home
+    command: --init-file /home/initscript.sql
     environment:
         - MYSQL_ROOT_PASSWORD=password
