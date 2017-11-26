@@ -18,8 +18,10 @@ services:
     environment:
       - ONLINE_STORE_DB_USERNAME=root
       - ONLINE_STORE_DB_PASSWORD=password
+      - ONLINE_STORE_DB_SERVER=OnlineStoreDb
       - ONLINE_STORE_MQ_USERNAME=store
       - ONLINE_STORE_MQ_PASSWORD=password
+      - ONLINE_STORE_MQ_SERVER=OnlineStoreMQ
     ports:
           - 3001:80
     build:
@@ -36,8 +38,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Container
       - ONLINE_STORE_DB_USERNAME=root
       - ONLINE_STORE_DB_PASSWORD=password
+      - ONLINE_STORE_DB_SERVER=OnlineStoreDb
       - ONLINE_STORE_MQ_USERNAME=store
       - ONLINE_STORE_MQ_PASSWORD=password
+      - ONLINE_STORE_MQ_SERVER=OnlineStoreMQ
     build:
       context: ./OnlineStoreWorker
       dockerfile: Dockerfile

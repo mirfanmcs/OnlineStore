@@ -19,8 +19,9 @@ namespace OnlineStoreWorker.Repositories
         {
             var onlineStoreDbUserName = Environment.GetEnvironmentVariable("ONLINE_STORE_DB_USERNAME");
             var onlineStoreDbPassword = Environment.GetEnvironmentVariable("ONLINE_STORE_DB_PASSWORD");
+            var onlineStoreDbServer = Environment.GetEnvironmentVariable("ONLINE_STORE_DB_SERVER");
 
-            var connectionString = $"Server={_onlineStoreDbSettings.Value.Server};Database={_onlineStoreDbSettings.Value.Database};Uid={onlineStoreDbUserName};Pwd={onlineStoreDbPassword};";
+            var connectionString = $"Server={onlineStoreDbServer};Database={_onlineStoreDbSettings.Value.Database};Uid={onlineStoreDbUserName};Pwd={onlineStoreDbPassword};SSL Mode = None;charset=utf8";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 

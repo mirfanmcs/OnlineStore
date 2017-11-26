@@ -20,9 +20,10 @@ namespace OnlineStoreWebApi.Messaging
         {
             var onlineStoreMqUserName = Environment.GetEnvironmentVariable("ONLINE_STORE_MQ_USERNAME");
             var onlineStoreMqPassword = Environment.GetEnvironmentVariable("ONLINE_STORE_MQ_PASSWORD");
+            var onlineStoreMqServer = Environment.GetEnvironmentVariable("ONLINE_STORE_MQ_SERVER");
 
             var factory = new ConnectionFactory() 
-            { HostName = _onlineStoreMqSettings.Value.HostName, UserName = onlineStoreMqUserName, Password = onlineStoreMqPassword };
+            { HostName = onlineStoreMqServer, UserName = onlineStoreMqUserName, Password = onlineStoreMqPassword };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
